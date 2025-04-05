@@ -1,3 +1,5 @@
+//6 вариант
+
 <?php
 $str = 'f12f fghf f$%f ffff fxrf abba adca';
 $pattern = '/f..f/';
