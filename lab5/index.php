@@ -1,5 +1,5 @@
 <?php
-$categories = ['Авто', 'Мото', 'Велосипеды'];
+$categories = ['auto', 'moto', 'bike'];
 $error = '';
 $success = '';
 
@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (empty($title) || empty($text)) {
         $error = 'Заполните все поля';
     } else {
-        $safe_title = preg_replace('/[^\p{L}\d\s]/u', '', $title); // Удаляем спецсимволы
-        $safe_title = str_replace(' ', '_', $safe_title); // Замена пробелов
-        $filename = "{$category}/{$safe_title}_" . time() . '.txt'; // Уникальное имя
+        $safe_title = preg_replace('/[^\p{L}\d\s]/u', '', $title);
+        $safe_title = str_replace(' ', '_', $safe_title);
+        $filename = "{$category}/{$safe_title}_" . time() . '.txt';
 
         if (!is_dir($category)) {
             mkdir($category, 0777, true);
@@ -57,7 +57,7 @@ foreach ($categories as $cat) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Доска объявлений (Авто, Мото, Велосипеды)</title>
+    <title>Доска объявлений (auto, moto, bike)</title>
     <style>
         table { border-collapse: collapse; margin-top: 20px; }
         th, td { padding: 10px; border: 1px solid #ddd; }
